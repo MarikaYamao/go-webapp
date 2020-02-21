@@ -1,0 +1,12 @@
+version: '3' # composeファイルのバーション指定
+services:
+  app: # service名
+    build: .
+    tty: true # コンテナの起動永続化
+    volumes:
+      - .:/go/src/work
+    environment:
+      HTTP_PROXY: http://50.27.190.111:8080
+      HTTPS_PROXY: http://50.27.190.111:8080
+    ports: 
+      - "8080:8080"
