@@ -6,8 +6,5 @@ RUN mkdir /go/src/work
 WORKDIR /go/src/work
 ADD . /go/src/work
 
-RUN apk update \
-  && apk add --no-cache git \
-  && go get -u github.com/aws/aws-sdk-go \
-  && go get -u github.com/rs/xid \
-  && go get -u github.com/guregu/dynamo \
+RUN go get github.com/stretchr/gomniauth github.com/gorilla/websocket \
+    github.com/clbanning/x2j github.com/ugorji/go/codec gopkg.in/mgo.v2/bson
